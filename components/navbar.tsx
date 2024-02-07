@@ -13,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white w-full border-b md:border-0 uppercase font-bold text-xl">
+    <nav className="w-full uppercase font-bold text-xl">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:border-b">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link href="/">
@@ -34,9 +34,15 @@ export default function Navbar() {
           }`}
         >
           <ul className="text-center space-y-8 md:flex md:space-x-12 md:space-y-0 md:justify-end">
-            <li className="hover:text-indigo-600">A propos</li>
-            <li className="hover:text-indigo-600">Projet</li>
-            <li className="hover:text-indigo-600">Contact</li>
+            <li className="hover:text-sky-600">
+              <Link href="/a-propos">A propos</Link>
+            </li>
+            <li className="hover:text-sky-600">
+              <Link href="/projets">Projets</Link>
+            </li>
+            <li className="hover:text-sky-600">
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
       </div>

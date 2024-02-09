@@ -10,6 +10,10 @@ const nextConfig = {
         source: "/projets",
         destination: "/projects",
       },
+      {
+        source: "/projets/:slug*",
+        destination: "/projects/:slug*",
+      },
     ];
   },
 };

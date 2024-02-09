@@ -7,7 +7,7 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio Florian Copez",
+  title: "Portfolio | Acceuil",
   description: "Portfolio de Florian Copez, Développeur Web",
 };
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`flex flex-col ${inter.className} min-h-screen`}>
+      <body className={`flex flex-col min-h-screen ${inter.className}`}>
         <Header />
         <main className="grow flex items-center justify-center h-full m-8">
           {children}

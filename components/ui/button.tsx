@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         linkCustom: "text-zinc-100 bg-sky-700 hover:bg-sky-600",
         social:
-          "bg-zinc-100 hover:bg-zinc-950 hover:border-2 hover:border-zinc-100 -skew-y-3 text-zinc-950 hover:text-zinc-100 transition-colors duration-500",
+          "bg-zinc-100 hover:bg-zinc-950 hover:border-2 hover:border-zinc-100 -skew-y-3 text-zinc-950 hover:text-zinc-100 transition duration-500",
       },
       size: {
         default: "h-10 px-4 py-2",

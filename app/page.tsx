@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 // eslint-disable-next-line react/no-unescaped-entities
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -18,7 +19,9 @@ export default function Home() {
         des compétences acquises au cours de ma formation réalisée au sein de
         l'école O'clock mais aussi sur ce que j'apprends au quotidien. &#128513;
       </p>
-      <Button variant={"linkCustom"}>En savoir plus</Button>
+      <Button variant={"linkCustom"}>
+        <Link href="/a-propos">En savoir plus</Link>
+      </Button>
     </section>
   );
 }

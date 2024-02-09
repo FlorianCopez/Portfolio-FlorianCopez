@@ -74,3 +74,35 @@
     @apply bg-background text-foreground;
   }
 }
+
+.imageCustom{
+  transform:
+    rotateX(32deg)
+    rotateZ(6deg);
+  transform-style: preserve-3d;
+  border-radius: 32px;
+  box-shadow:
+    1px 1px 0 1px #f9f9fb,
+    -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+    28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+}
+
+
+@media (min-width: 768px){ 
+  .imageCustom{
+    transition:
+      .4s ease-in-out transform,
+      .4s ease-in-out box-shadow;
+  }
+
+  .imageCustom:hover{
+      transform:
+        translate3d(0px, -16px, 0px)
+        rotateX(32deg)
+        rotateZ(6deg);
+      box-shadow:
+        1px 1px 0 1px #f9f9fb,
+        -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+        54px 54px 28px -10px rgba(34, 33, 81, 0.15);
+  }
+}

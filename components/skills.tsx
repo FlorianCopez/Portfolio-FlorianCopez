@@ -1,9 +1,9 @@
-import { Skill } from "@/types";
+import { Skill, Tool } from "@/types";
 import React from "react";
 
 type Props = {
   title: string;
-  listSkill: Skill[];
+  listSkill: Skill[] | Tool[];
 };
 
 export default function Skills({ title, listSkill }: Props) {

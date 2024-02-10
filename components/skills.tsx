@@ -3,7 +3,7 @@ import React from "react";
 
 type Props = {
   title: string;
-  listSkill: Skill[] | Tool[];
+  listSkill: Skill[];
 };
 
 export default function Skills({ title, listSkill }: Props) {

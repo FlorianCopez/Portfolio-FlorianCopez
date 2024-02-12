@@ -1,9 +1,7 @@
 "use client";
+/* eslint-disable react/no-unescaped-entities */
 
 import ProjectList from "@/components/project-list";
-/* eslint-disable react/no-unescaped-entities */
-// eslint-disable-next-line react/no-unescaped-entities
-
 import { Project } from "@/types";
 import { PROJECTS } from "@/utils/projects";
 import { useState } from "react";

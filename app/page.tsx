@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-// eslint-disable-next-line react/no-unescaped-entities
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

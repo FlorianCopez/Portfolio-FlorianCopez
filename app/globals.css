@@ -87,6 +87,12 @@
     28px 28px 28px 0 rgba(34, 33, 81, 0.25);
 }
 
+.imageProject{
+  transform: perspective(1500px) rotateY(15deg);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
 
 @media (min-width: 768px){ 
   .imageCustom{
@@ -104,5 +110,13 @@
         1px 1px 0 1px #f9f9fb,
         -1px 0 28px 0 rgba(34, 33, 81, 0.01),
         54px 54px 28px -10px rgba(34, 33, 81, 0.15);
+  }
+
+  .imageProject {
+    transition: transform 4s ease 0s;
+  }
+
+  .imageProject:hover {
+    transform: perspective(3000px) rotateY(5deg);
   }
 }

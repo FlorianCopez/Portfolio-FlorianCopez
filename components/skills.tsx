@@ -1,4 +1,4 @@
-import { Skill } from "@/types";
+import { Skill, Tool } from "@/types";
 import React from "react";
 
 type Props = {

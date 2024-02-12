@@ -1,5 +1,6 @@
 "use client";
 
+import DownloadFile from "@/components/download-file";
 import Skills from "@/components/skills";
 /* eslint-disable react/no-unescaped-entities */
 // eslint-disable-next-line react/no-unescaped-entities
@@ -66,6 +67,13 @@ export default function About() {
           conscience que c'était l'évidence pour moi. Chaque jour, j'apprends de
           nouvelles compétences et découvre un univers qui me captive.
         </p>
+        <div className="text-center mt-12">
+          <DownloadFile
+            filePath="/FlorianCopez_CV.pdf"
+            fileName="FlorianCopez_CV.pdf"
+            textButton="Télécharger mon CV"
+          />
+        </div>
       </section>
       <section className="md:w-5/12">
         <Skills title="Mes compétences" listSkill={listSkills} />

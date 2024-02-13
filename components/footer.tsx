@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Linkedin, Github } from "lucide-react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 function getYear() {
   const today = new Date();
@@ -20,12 +21,23 @@ export default function Footer() {
           <small className="italic">Developpeur Web</small>
         </div>
         <div className="w-1/2 md:w-1/4 flex justify-center items-center pl-8 gap-4">
-          <Button variant="social">
-            <Linkedin />
-          </Button>
-          <Button variant="social">
-            <Github />
-          </Button>
+          <Link
+            href="https://www.linkedin.com/in/florian-copez/"
+            legacyBehavior
+          >
+            <a target="_blank" rel="noreferrer">
+              <Button variant="social">
+                <Linkedin />
+              </Button>
+            </a>
+          </Link>
+          <Link href="https://github.com/FlorianCopez" legacyBehavior>
+            <a target="_blank" rel="noreferrer">
+              <Button variant="social">
+                <Github />
+              </Button>
+            </a>
+          </Link>
         </div>
       </div>
       <div className="flex justify-center">

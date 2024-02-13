@@ -4,10 +4,9 @@ import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Button } from "./ui/button";
 import FlashMessage from "./flash-message";
-import validator from "validator";
 
 interface FormData {
-  email: string;
+  name: string;
   message: string;
   subject: string;
   [key: string]: string;
@@ -15,7 +14,7 @@ interface FormData {
 
 export default function ContactForm() {
   const initialFormData: FormData = {
-    email: "",
+    name: "",
     subject: "",
     message: "",
   };
@@ -31,8 +30,8 @@ export default function ContactForm() {
 
   const validateField = (fieldName: string, value: string): string => {
     switch (fieldName) {
-      case "email":
-        return validator.isEmail(value) ? "" : "Adresse email invalide";
+      case "name":
+        return value.trim() !== "" ? "" : "Votre nom est obligatoire";
       case "subject":
         return value.trim() !== "" ? "" : "L'objet est obligatoire";
       case "message":
@@ -91,7 +90,7 @@ export default function ContactForm() {
         if (response.status === 200) {
           setFlashMessage({
             status: "Success",
-            message: "L'email a bien été envoyé!",
+            message: response.data.message,
           });
           setFormData(initialFormData);
         } else {
@@ -101,10 +100,18 @@ export default function ContactForm() {
           });
         }
       } catch (error) {
-        setFlashMessage({
-          status: "Error",
-          message: "Une erreur s'est produite lors de l'envoi de l'email.",
-        });
+        if (axios.isAxiosError(error) && error.response) {
+          setFlashMessage({
+            status: "Error",
+            message: error.response.data.message,
+          });
+        } else {
+          setFlashMessage({
+            status: "Error",
+            message:
+              "Une erreur inconnue s'est produite lors de l'envoi de l'email.",
+          });
+        }
       }
     }
   };
@@ -124,25 +131,24 @@ export default function ContactForm() {
       )}
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
         <div className={classDivField}>
-          <label htmlFor="email" className={classLabel}>
-            Email*
+          <label htmlFor="name" className={classLabel}>
+            Nom*
           </label>
           <input
             className={`${classInput} ${
               validationErrors.email && "border-red-500"
             }`}
-            type="email"
-            name="email"
-            id="email"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Entrer votre nom"
+            autoComplete="off"
             required
-            placeholder="Entrer votre email"
-            value={formData.email}
+            value={formData.name}
             onChange={handleChange}
           />
-          {validationErrors.email && (
-            <p className="text-red-500 text-sm mt-1">
-              {validationErrors.email}
-            </p>
+          {validationErrors.name && (
+            <p className="text-red-500 text-sm mt-1">{validationErrors.name}</p>
           )}
         </div>
         <div className={classDivField}>
@@ -153,10 +159,12 @@ export default function ContactForm() {
             className={`${classInput} ${
               validationErrors.subject && "border-red-500"
             }`}
-            name="subject"
-            id="subject"
             type="text"
+            id="subject"
+            name="subject"
             placeholder="Entrer l'objet de votre message"
+            autoComplete="off"
+            required
             value={formData.subject}
             onChange={handleChange}
           />
@@ -174,9 +182,11 @@ export default function ContactForm() {
             className={`${classInput} ${
               validationErrors.message && "border-red-500"
             }`}
-            name="message"
             id="message"
+            name="message"
             placeholder="Entrer votre message"
+            required
+            autoComplete="off"
             value={formData.message}
             onChange={handleChange}
             rows={6}

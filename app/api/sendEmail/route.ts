@@ -4,20 +4,17 @@ import { Transporter, createTransport } from "nodemailer";
 interface EmailData {
   subject: string;
   message: string;
-  email: string;
+  name: string;
 }
 
 export async function POST(request: any) {
   try {
-    const { subject, message, email }: EmailData = await request.json();
-
-    if (!subject || !message || !email) {
-      return NextResponse.json(
-        { message: "Subject, message, and email are required fields" },
-        { status: 400 }
-      );
-    }
+    const { subject, message, name }: EmailData = await request.json();
     
+    if (!subject || !message || !name) {
+      throw new Error("Les champs sont obligatoires");
+    }
+
     const transporter: Transporter = createTransport({
       host: process.env.EMAIL_HOST,
       port: Number(process.env.EMAIL_PORT),
@@ -29,15 +26,15 @@ export async function POST(request: any) {
     });
 
     const mailOption = {
-      from: email,
+      from: `"Portfolio" <${process.env.EMAIL_USER}`,
       to: process.env.EMAIL_USER,
       subject: subject,
-      html: `<p>${message}</p>`,
+      html: `<h2>Nouveau mail de "${name}" reçu</h2> <h3>Ci-joint le message : </h3> <p>${message}</p>`,
     };
 
     await transporter.sendMail(mailOption);
 
-    return NextResponse.json({ message: "Email sent Successfully" }, { status: 200 });
+    return NextResponse.json({ message: "L'email a bien été envoyé!" }, { status: 200 });
   } catch (error: any) {
     return NextResponse.json({ message: "Failed to Send Email" }, { status: 500 });
   }

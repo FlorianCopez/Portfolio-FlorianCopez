@@ -6,9 +6,9 @@ type Props = {
   listSkill: Skill[];
 };
 
-export default function Skills({ title, listSkill }: Props) {
+export default function SkillList({ title, listSkill }: Props) {
   return (
-    <div className="my-12 md:my-0 md:mb-12">
+    <div className="mb-12 md:my-0">
       <h2 className="text-sky-950 text-2xl font-bold text-center">{title}</h2>
       <div className="flex flex-wrap gap-3 mt-4">
         {listSkill.map((skill) => {

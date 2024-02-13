@@ -18,5 +18,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     }
   }, [params.slug]);
 
-  return <>{project && <ProjectItem project={project} />}</>;
+  return <section>{project && <ProjectItem project={project} />}</section>;
+
+  //md:flex md:flex-col md:items-center
 }

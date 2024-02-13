@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <section className="text-center space-y-8 md:px-32">
+    <section className="text-center space-y-8">
       <div className="space-y-2">
         <h1 className="text-4xl font-extrabold">
           Hello World ! Je suis Florian Copez

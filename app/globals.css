@@ -75,48 +75,55 @@
   }
 }
 
-.imageCustom{
-  transform:
-    rotateX(32deg)
-    rotateZ(6deg);
-  transform-style: preserve-3d;
-  border-radius: 32px;
-  box-shadow:
-    1px 1px 0 1px #f9f9fb,
-    -1px 0 28px 0 rgba(34, 33, 81, 0.01),
-    28px 28px 28px 0 rgba(34, 33, 81, 0.25);
-}
 
-.imageProject{
+
+/* .imageProject{
   transform: perspective(1500px) rotateY(15deg);
   border-radius: 1rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-}
+} */
 
 
 @media (min-width: 768px){ 
   .imageCustom{
+    transform:
+      rotateX(30deg)
+      rotateZ(4deg);
+    transform-style: preserve-3d;
+    will-change: transform, box-shadow;
     transition:
-      .4s ease-in-out transform,
-      .4s ease-in-out box-shadow;
+    .6s ease-in-out transform,
+    .6s ease-in-out box-shadow;
+    box-shadow:
+      1px 1px 0 1px #f9f9fb,
+      -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+      28px 28px 28px 0 rgba(34, 33, 81, 0.25);
   }
 
-  .imageCustom:hover{
+  .transitionCustom:hover .imageCustom{
       transform:
         translate3d(0px, -16px, 0px)
-        rotateX(32deg)
-        rotateZ(6deg);
+        rotateX(0deg)
+        rotateZ(0deg);
       box-shadow:
         1px 1px 0 1px #f9f9fb,
         -1px 0 28px 0 rgba(34, 33, 81, 0.01),
         54px 54px 28px -10px rgba(34, 33, 81, 0.15);
   }
+}
 
-  .imageProject {
-    transition: transform 4s ease 0s;
+.imageProject {
+  transform: perspective(0px) rotateY(0deg);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  animation: projectAnimation 7s infinite alternate ease;
+}
+
+@keyframes projectAnimation {
+  0%, 100% {
+    transform: perspective(1800px) rotateY(5deg);
   }
-
-  .imageProject:hover {
-    transform: perspective(3000px) rotateY(5deg);
+  50% {
+    transform: perspective(1800px) rotateY(-5deg);
   }
 }

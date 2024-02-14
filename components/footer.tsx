@@ -5,13 +5,21 @@ import { Linkedin, Github } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
+/**
+ * Gets the current year.
+ * @returns {number} The current year.
+ */
 function getYear() {
   const today = new Date();
   return today.getFullYear();
 }
 
+/**
+ * Footer component displaying developer information and social links.
+ * @returns {JSX.Element} Footer component.
+ */
 export default function Footer() {
-  const [currentYear, setCurrentYear] = useState(getYear());
+  const currentYear = getYear();
 
   return (
     <footer className="bg-zinc-950 text-zinc-100 px-16 pt-10 pb-6">

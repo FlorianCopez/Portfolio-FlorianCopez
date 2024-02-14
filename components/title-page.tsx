@@ -5,6 +5,13 @@ type Props = {
   subtitle: string;
 };
 
+/**
+ * Component displaying a title and subtitle for a page.
+ *
+ * @component
+ * @param {TitlePageProps} props - The properties of the component.
+ * @returns {JSX.Element} - The rendered title page component.
+ */
 export default function TitlePage({ title, subtitle }: Props) {
   return (
     <div className="text-center mb-8 md:mb-12">

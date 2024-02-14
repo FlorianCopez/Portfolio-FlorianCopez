@@ -5,6 +5,10 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { Button } from "./ui/button";
 import FlashMessage from "./flash-message";
 
+/**
+ * Represents the form data for the contact form.
+ * @interface FormData
+ */
 interface FormData {
   name: string;
   message: string;
@@ -12,22 +16,36 @@ interface FormData {
   [key: string]: string;
 }
 
+/**
+ * ContactForm component for displaying and handling the contact form.
+ * @returns {JSX.Element} JSX element representing the ContactForm.
+ */
 export default function ContactForm() {
+  // Initial form data and state variables
   const initialFormData: FormData = {
     name: "",
     subject: "",
     message: "",
   };
+
+  // State to manage form data
   const [formData, setFormData] = useState<FormData>(initialFormData);
+
+  // State for displaying flash messages
   const [flashMessage, setFlashMessage] = useState<{
     status: string;
     message: string;
   } | null>(null);
+
+  // State to track whether the form has been submitted
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
+  // State for validation errors in form fields
   const [validationErrors, setValidationErrors] = useState<{
     [key: string]: string;
   }>({});
 
+  // Function to validate individual form field
   const validateField = (fieldName: string, value: string): string => {
     switch (fieldName) {
       case "name":
@@ -41,6 +59,7 @@ export default function ContactForm() {
     }
   };
 
+  // Function to validate the entire form
   const validateForm = (): boolean => {
     const errors: { [key: string]: string } = {};
 
@@ -56,6 +75,7 @@ export default function ContactForm() {
     return Object.keys(errors).length === 0;
   };
 
+  // Event handler for input changes
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -76,6 +96,7 @@ export default function ContactForm() {
     }));
   };
 
+  // Event handler for form submission
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -116,6 +137,7 @@ export default function ContactForm() {
     }
   };
 
+  // CSS classes for styling
   const classDivField = "flex flex-col space-y-1";
   const classLabel = "font-semibold";
   const classInput =
@@ -123,13 +145,17 @@ export default function ContactForm() {
 
   return (
     <>
+      {/* Display flash message if available */}
       {flashMessage && (
         <FlashMessage
           status={flashMessage.status}
           message={flashMessage.message}
         />
       )}
+
+      {/* Contact form */}
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+        {/* Name field */}
         <div className={classDivField}>
           <label htmlFor="name" className={classLabel}>
             Nom*
@@ -151,6 +177,8 @@ export default function ContactForm() {
             <p className="text-red-500 text-sm mt-1">{validationErrors.name}</p>
           )}
         </div>
+
+        {/* Subject field */}
         <div className={classDivField}>
           <label htmlFor="subject" className={classLabel}>
             Objet du message*
@@ -174,6 +202,8 @@ export default function ContactForm() {
             </p>
           )}
         </div>
+
+        {/* Message field */}
         <div className={classDivField}>
           <label htmlFor="message" className={classLabel}>
             Message*
@@ -197,9 +227,13 @@ export default function ContactForm() {
             </p>
           )}
         </div>
+
+        {/* Additional information */}
         <div>
           <p className="text-xs italic text-zinc-500">* Champs obligatoires </p>
         </div>
+
+        {/* Submit button */}
         <div className="py-4 flex justify-end">
           <Button variant="linkCustom" type="submit">
             Envoyer

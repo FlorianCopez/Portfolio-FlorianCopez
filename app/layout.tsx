@@ -4,13 +4,22 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
+// Load the Inter font with the Latin subset
 const inter = Inter({ subsets: ["latin"] });
 
+/**
+ * Metadata for the RootLayout component.
+ */
 export const metadata: Metadata = {
-  title: "Portfolio | Acceuil",
+  title: "Portfolio | Accueil",
   description: "Portfolio de Florian Copez, Développeur Web",
 };
 
+/**
+ * RootLayout component that provides a common layout structure for the application.
+ * @param {Object} props - React props containing children components.
+ * @returns {JSX.Element} JSX element representing the RootLayout.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,10 +28,15 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`flex flex-col min-h-screen ${inter.className}`}>
+        {/* Header component */}
         <Header />
+
+        {/* Main content area */}
         <main className="grow m-8 py-8 md:mx-32 xl:mx-60 flex items-center justify-center">
           {children}
         </main>
+
+        {/* Footer component */}
         <Footer />
       </body>
     </html>

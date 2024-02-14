@@ -10,7 +10,19 @@ type Props = {
   project: Project;
 };
 
+/**
+ * Component displaying details of a project.
+ *
+ * @component
+ * @param {Object} props - The properties of the component.
+ * @param {Project} props.project - The project data.
+ * @returns {JSX.Element} - The rendered project item component.
+ */
 export default function ProjectItem({ project }: Props) {
+  /**
+   * Extracts tools from the project data.
+   * @type {Tool[]}
+   */
   const listTools: Tool[] = project.tools.map((tool) => tool);
 
   return (

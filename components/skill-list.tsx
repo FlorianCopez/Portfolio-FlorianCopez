@@ -6,6 +6,13 @@ type Props = {
   listSkill: Skill[];
 };
 
+/**
+ * Component displaying a list of skills.
+ *
+ * @component
+ * @param {SkillListProps} props - The properties of the component.
+ * @returns {JSX.Element} - The rendered skill list component.
+ */
 export default function SkillList({ title, listSkill }: Props) {
   return (
     <div className="mb-12 md:my-0">

@@ -8,6 +8,13 @@ type Props = {
   projectsList: Project[];
 };
 
+/**
+ * Component displaying a list of projects.
+ *
+ * @component
+ * @param {ProjectListProps} props - The properties of the component.
+ * @returns {JSX.Element} - The rendered project list component.
+ */
 export default function ProjectList({ projectsList }: Props) {
   return (
     <>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LogoSite from "@/public/logo_florian.png";
+import LogoSite from "@/public/logo-florian.png";
 
 /**
  * Logo component displaying the site logo along with the site name.

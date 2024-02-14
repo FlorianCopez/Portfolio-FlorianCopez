@@ -1,8 +1,10 @@
 "use client";
 
 import ProjectItem from "@/components/project-item";
+import { Button } from "@/components/ui/button";
 import { Project } from "@/types";
 import { PROJECTS } from "@/utils/projects";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 /**
@@ -25,5 +27,22 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     }
   }, [params.slug]);
 
-  return <section>{project && <ProjectItem project={project} />}</section>;
+  return (
+    <section>
+      {project ? (
+        <ProjectItem project={project} />
+      ) : (
+        <>
+          <div className="flex flex-col items-center gap-8">
+            <span className="font-semibold text-zinc-500 italic">
+              Pas de projet trouvé !
+            </span>
+            <Link href="/projets">
+              <Button variant="linkCustom">Retour Projets</Button>
+            </Link>
+          </div>
+        </>
+      )}
+    </section>
+  );
 }

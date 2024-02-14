@@ -36,6 +36,7 @@ export default function Navbar() {
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
               onClick={onClickState}
+              aria-label="navbarButton"
             >
               {state ? <X /> : <Menu />}
             </button>

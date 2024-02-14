@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Linkedin, Github } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -34,14 +33,14 @@ export default function Footer() {
             legacyBehavior
           >
             <a target="_blank" rel="noreferrer">
-              <Button variant="social">
+              <Button variant="social" aria-label="Link Linkedin">
                 <Linkedin />
               </Button>
             </a>
           </Link>
           <Link href="https://github.com/FlorianCopez" legacyBehavior>
             <a target="_blank" rel="noreferrer">
-              <Button variant="social">
+              <Button variant="social" aria-label="Link Github">
                 <Github />
               </Button>
             </a>

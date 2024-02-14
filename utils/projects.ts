@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
         synopsis: "Money Advisor est un logiciel compatible sous windows et lié à une application mobile. Il a été conçu pour aider à gérer efficacement les finances personnelles.",
         subtitle:"J'ai participé sur la création et la mise en place d'un module d'analyse de marché durant un stage de 3 mois.",
         description: "Ce module offre à l'utilisateur la possibilité de comparer les prix de ses produits avec la tendance actuelle du marché sur différentes périodes. Les prix sont aussi renseigner par les utilisateurs. Pour développer ce module, j'ai pris en charge la conception complète de la base de données, la mise en œuvre du traitement des données, la sécurité des données et du modue, ainsi que la manipulation et la présentation dynamique de ces données sur l'interface utilisateur. Il sera disponible sur la v4",
-        image:"/backoffice_opotager.png",
+        image:"/money_advisor.png",
         url:"https://www.money-advisor.fr/",
         urlRepo: null,
         slug:"money-advisor-module-analyse-de-marche",

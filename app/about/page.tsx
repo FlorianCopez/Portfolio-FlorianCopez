@@ -1,8 +1,3 @@
-/**
- * @fileOverview About component to display information about the developer.
- * @module About
- */
-
 "use client";
 
 import DownloadFile from "@/components/download-file";
@@ -59,7 +54,6 @@ export default function About() {
    * JSX structure for rendering the About section.
    * @returns {JSX.Element} JSX structure for the About section.
    */
-
   return (
     <>
       <section>

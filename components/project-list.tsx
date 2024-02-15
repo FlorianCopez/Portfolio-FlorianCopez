@@ -21,7 +21,7 @@ export default function ProjectList({ projectsList }: Props) {
       {projectsList.map((project) => (
         <div
           key={project.id}
-          className="transitionCustom my-4 md:flex md:flex-col md:items-center md:my-16 lg:flex-row lg:gap-24 lg:my-36 xl:justify-center"
+          className="transitionCustom mt-16 md:flex md:flex-col md:items-center md:mt-16 lg:flex-row lg:gap-24 lg:mt-36 xl:justify-center"
         >
           <div className="relative w-full h-48 md:h-56 md:w-2/3 lg:min-h-72 lg:w-1/2 xl:w-5/12">
             <Image

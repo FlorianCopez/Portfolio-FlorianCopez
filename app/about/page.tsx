@@ -73,7 +73,7 @@ export default function About() {
             </p>
             <p className="py-2">
               J&apos;ai commencé ma carrière en tant qu&apos;électricien, où
-              j&apos;ai également fait des études en tant que métreur. Par la
+              j&apos;ai également suivi des études en tant que métreur. Par la
               suite, j&apos;ai rejoint une grande enseigne de bricolage en tant
               que conseiller de vente, élargissant ainsi mes compétences dans le
               domaine. Mon parcours a pris une nouvelle direction lorsque
@@ -83,19 +83,19 @@ export default function About() {
             </p>
             <p className="py-2">
               Cependant, après avoir occupé ce poste, j&apos;ai ressenti le
-              besoin de changer de cap et de poursuivre ma passion pour
-              l&apos;informatique. Depuis ma jeunesse, j&apos;ai toujours été
-              fasciné par les nouvelles technologies et les jeux vidéo. Cette
-              passion m&apos;a motivé à entreprendre une reconversion dans le
-              développement web.
+              besoin de changer de cap et de me diriger vers un domaine que
+              j&apos;apprécie particulièrement, celui de l&apos;informatique.
+              Depuis ma jeunesse, j&apos;ai toujours été fasciné par les
+              nouvelles technologies et les jeux vidéo. Cet intérêt m&apos;a
+              motivé à entreprendre une reconversion dans le développement web.
             </p>
             <p className="py-2">
               Avant de me lancer pleinement dans le développement web, j&apos;ai
               pris le temps d&apos;explorer le langage HTML et CSS. Cette
               première incursion m&apos;a permis de confirmer mon intérêt pour
-              ce domaine et de prendre conscience que c&apos;était
-              l&apos;évidence pour moi. Chaque jour, j&apos;apprends de
-              nouvelles compétences et découvre un univers qui me captive.
+              ce domaine et de prendre conscience que c&apos;était une évidence
+              pour moi. Chaque jour, j&apos;apprends de nouvelles compétences et
+              découvre un univers qui me captive.
             </p>
             <p className="py-2">
               Pour finir, en 2023, j&apos;ai entrepris une formation intensive

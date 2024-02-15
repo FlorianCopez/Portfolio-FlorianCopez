@@ -4,7 +4,7 @@ import { Metadata } from "next";
  * Metadata configuration for the Projects page.
  */
 export const metadata: Metadata = {
-  title: "Portfolio | Projets",
+  title: "Projets",
 };
 
 /**

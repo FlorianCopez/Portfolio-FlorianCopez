@@ -4,7 +4,7 @@ import { Metadata } from "next";
  * Metadata configuration for the About page.
  */
 export const metadata: Metadata = {
-  title: "Portfolio | About Me",
+  title: "A propos de moi",
 };
 
 /**

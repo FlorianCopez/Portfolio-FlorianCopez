@@ -44,7 +44,7 @@ export default function ProjectItem({ project }: Props) {
         </div>
       </div>
 
-      <div className="text-zinc-500 my-8">
+      <div className="text-zinc-500 my-16">
         <p>{project.description}</p>
       </div>
       <div className="flex justify-center gap-4 my-4">

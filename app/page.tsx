@@ -20,10 +20,10 @@ export default function Home() {
       </div>
       {/* Introduction paragraph */}
       <p className="text-lg font-semibold">
-        Vous voila sur mon portfolio, un endroit qui me permet de m&apos;exercer
-        sur des compétences acquises au cours de ma formation réalisée au sein
-        de l&apos;école O&apos;clock mais aussi sur ce que j&apos;apprends au
-        quotidien. &#128513;
+        Bienvenue sur mon portfolio, un espace dédié à la mise en pratique des
+        compétences acquises au cours de ma formation à l&apos;école
+        O&apos;clock, ainsi qu&apos;à l&apos;apprentissage continu au quotidien.
+        <span className="rocket"> &#128640;</span>
       </p>
       {/* Button linking to the About page */}
       <Button variant={"linkCustom"}>

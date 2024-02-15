@@ -29,6 +29,15 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <section>
+      <div className="mb-4">
+        <Link
+          href="/projets"
+          className="text-zinc-800 hover:text-sky-600 hover:border-sky-600 hover:underline"
+        >
+          Retour
+        </Link>
+      </div>
+
       {project ? (
         <ProjectItem project={project} />
       ) : (

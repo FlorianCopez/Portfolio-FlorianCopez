@@ -4,7 +4,7 @@ import { Metadata } from "next";
  * Metadata configuration for the Contact page.
  */
 export const metadata: Metadata = {
-  title: "Portfolio | Contact",
+  title: "Contact",
 };
 
 /**

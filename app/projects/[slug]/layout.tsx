@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // Return metadata including the generated title
   return {
-    title: `Portfolio | ${title}`,
+    title: `Projet | ${title}`,
   };
 }
 

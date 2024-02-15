@@ -159,55 +159,61 @@ export default function ContactForm() {
       )}
 
       {/* Contact form */}
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-        {/* Name field */}
-        <div className={classDivField}>
-          <label htmlFor="name" className={classLabel}>
-            Nom*
-          </label>
-          <input
-            className={`${classInput} ${
-              validationErrors.email && "border-red-500"
-            }`}
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Entrer votre nom"
-            autoComplete="off"
-            required
-            value={formData.name}
-            onChange={handleChange}
-          />
-          {validationErrors.name && (
-            <p className="text-red-500 text-sm mt-1">{validationErrors.name}</p>
-          )}
-        </div>
+      <form onSubmit={handleSubmit}>
+        <div className="lg:flex gap-x-4 my-4">
+          {/* Name field */}
+          <div className={`${classDivField} my-4 lg:my-0 lg:w-1/2`}>
+            <label htmlFor="name" className={classLabel}>
+              Nom*
+            </label>
+            <input
+              className={`${classInput} ${
+                validationErrors.email && "border-red-500"
+              }`}
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Entrer votre nom"
+              autoComplete="off"
+              required
+              value={formData.name}
+              onChange={handleChange}
+            />
+            {validationErrors.name && (
+              <p className="text-red-500 text-sm mt-1">
+                {validationErrors.name}
+              </p>
+            )}
+          </div>
 
-        {/* email field */}
-        <div className={classDivField}>
-          <label htmlFor="email" className={classLabel}>
-            Email*
-          </label>
-          <input
-            className={`${classInput} ${
-              validationErrors.email && "border-red-500"
-            }`}
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Entrer votre email"
-            autoComplete="off"
-            required
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {validationErrors.name && (
-            <p className="text-red-500 text-sm mt-1">{validationErrors.name}</p>
-          )}
+          {/* email field */}
+          <div className={`${classDivField} lg:w-1/2`}>
+            <label htmlFor="email" className={classLabel}>
+              Email*
+            </label>
+            <input
+              className={`${classInput} ${
+                validationErrors.email && "border-red-500"
+              }`}
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Entrer votre email"
+              autoComplete="off"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
+            {validationErrors.name && (
+              <p className="text-red-500 text-sm mt-1">
+                {validationErrors.name}
+              </p>
+            )}
+          </div>
         </div>
 
         {/* Subject field */}
-        <div className={classDivField}>
+        <div className={`${classDivField} my-4`}>
           <label htmlFor="subject" className={classLabel}>
             Objet du message*
           </label>

@@ -118,3 +118,21 @@
     transform: perspective(1800px) rotateY(-5deg);
   }
 }
+
+.rocket {
+  position: absolute;
+  display: inline-block;
+  animation: rocketAnimation 1.5s ease-out;
+}
+
+@keyframes rocketAnimation {
+  0% {
+      opacity: 0;
+      transform: translate(-100vw, 50vh);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(0, 0);
+  }
+}
+

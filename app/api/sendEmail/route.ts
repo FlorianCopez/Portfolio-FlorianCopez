@@ -7,6 +7,7 @@ import { Transporter, createTransport } from "nodemailer";
 interface EmailData {
   subject: string;
   message: string;
+  email: string;
   name: string;
 }
 
@@ -18,10 +19,10 @@ interface EmailData {
 export async function POST(request: any) {
   try {
     // Extract email data from the request body
-    const { subject, message, name }: EmailData = await request.json();
+    const { subject, message, name, email }: EmailData = await request.json();
     
     // Check if required fields are present
-    if (!subject || !message || !name) {
+    if (!subject || !message || !name || !email) {
       throw new Error("Les champs sont obligatoires");
     }
 
@@ -41,7 +42,7 @@ export async function POST(request: any) {
       from: `"Portfolio" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
       subject: subject,
-      html: `<h2>New email from "${name}" received</h2> <h3>Message Content: </h3> <p>${message}</p>`,
+      html: `<h2>Nouveau mail reçu de "${name}"</h2><p>${message}</p><span>${email}</span>`,
     };
 
     // Send the email using nodemailer

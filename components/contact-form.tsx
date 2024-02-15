@@ -4,6 +4,7 @@ import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Button } from "./ui/button";
 import FlashMessage from "./flash-message";
+import isEmail from "validator/lib/isEmail";
 
 /**
  * Represents the form data for the contact form.
@@ -11,6 +12,7 @@ import FlashMessage from "./flash-message";
  */
 interface FormData {
   name: string;
+  email: string;
   message: string;
   subject: string;
   [key: string]: string;
@@ -24,6 +26,7 @@ export default function ContactForm() {
   // Initial form data and state variables
   const initialFormData: FormData = {
     name: "",
+    email: "",
     subject: "",
     message: "",
   };
@@ -50,6 +53,8 @@ export default function ContactForm() {
     switch (fieldName) {
       case "name":
         return value.trim() !== "" ? "" : "Votre nom est obligatoire";
+      case "email":
+        return isEmail(value) ? "" : "L'email est obligatoire";
       case "subject":
         return value.trim() !== "" ? "" : "L'objet est obligatoire";
       case "message":
@@ -171,6 +176,29 @@ export default function ContactForm() {
             autoComplete="off"
             required
             value={formData.name}
+            onChange={handleChange}
+          />
+          {validationErrors.name && (
+            <p className="text-red-500 text-sm mt-1">{validationErrors.name}</p>
+          )}
+        </div>
+
+        {/* email field */}
+        <div className={classDivField}>
+          <label htmlFor="email" className={classLabel}>
+            Email*
+          </label>
+          <input
+            className={`${classInput} ${
+              validationErrors.email && "border-red-500"
+            }`}
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Entrer votre email"
+            autoComplete="off"
+            required
+            value={formData.email}
             onChange={handleChange}
           />
           {validationErrors.name && (

@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <body className={`flex flex-col min-h-screen ${montserrat.className}`}>
         {/* Header component */}
         <Header />
